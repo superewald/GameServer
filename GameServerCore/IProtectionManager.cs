@@ -13,6 +13,5 @@ namespace GameServerCore
 
         public void RemoveProtection(IAttackableUnit element);
         public bool IsProtected(IAttackableUnit element);
-        public void HandleFountainProtection(IChampion champion);
     }
 }

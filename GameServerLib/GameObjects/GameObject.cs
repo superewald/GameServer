@@ -117,7 +117,15 @@ namespace LeagueSandbox.GameServer.GameObjects
             // current position
             var cur = new Vector2(X, Y);
 
-            var next = new Vector2(Target.X, Target.Y);
+            var next = new Vector2();
+            if (!Target.IsSimpleTarget)
+            {
+                next = new Vector2(Target.X, Target.Y);
+            }
+            else
+            {
+                next = Waypoints[WaypointIndex];
+            }
 
             var goingTo = next - cur;
             _direction = Vector2.Normalize(goingTo);
